@@ -1,7 +1,17 @@
+import { Route, Routes } from "react-router-dom";
+
+import DiaryPage from "../../page/DiaryPage/DiaryPage";
+import Navigation from "../Navigation/Navigation";
+
 function App() {
   return (
     <>
-      <div>HOME</div>
+      <Navigation />
+
+      <DiaryPage />
+      <Routes>
+        <Route path="/diary" element={<DiaryPage />} />
+      </Routes>
     </>
   );
 }
