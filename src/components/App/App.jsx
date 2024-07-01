@@ -2,10 +2,12 @@ import { Route, Routes } from "react-router-dom";
 
 import DiaryPage from "../../page/DiaryPage/DiaryPage";
 import Navigation from "../Navigation/Navigation";
+import Header from "../Header/Header";
 
 function App() {
   return (
     <>
+      <Header />
       <Navigation />
 
       <DiaryPage />

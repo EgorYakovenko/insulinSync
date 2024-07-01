@@ -1,3 +1,18 @@
-.container {
+.containerSearch {
   display: flex;
+  margin-bottom: 15px;
+}
+
+.containerCard {
+  display: flex;
+}
+
+.button {
+  display: flex;
+  flex-direction: column;
+}
+
+.amountImsulin {
+  display: flex;
+  flex-direction: column;
 }
