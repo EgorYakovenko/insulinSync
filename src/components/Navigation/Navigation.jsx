@@ -4,13 +4,13 @@ import css from "./Navigation.module.css";
 export default function Navigation() {
   return (
     <nav className={css.container}>
-      <NavLink className={css.item} to="/">
+      <NavLink className={css.item} to="/diary">
         Дневник
       </NavLink>
-      <NavLink className={css.item} to="/">
+      <NavLink className={css.item} to="/about-produkt">
         Узнать о продукте
       </NavLink>
-      <NavLink className={css.item} to="/">
+      <NavLink className={css.item} to="/create-dish">
         Составить блюдо
       </NavLink>
     </nav>

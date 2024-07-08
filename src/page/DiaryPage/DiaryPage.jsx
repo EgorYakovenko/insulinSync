@@ -3,21 +3,24 @@ import css from "./DiaryPage.module.css";
 export default function DiaryPage() {
   return (
     <>
+      <h1>Дневник</h1>
       <div className={css.containerSearch}>
         <button type="button">Добавить</button>
         <input type="search" name="" id="" placeholder="Поиск" />
       </div>
       <div className={css.containerCard}>
-        <div>
+        <div className={css.text}>
           <p>Завтрак</p>
           <p>Обед</p>
           <p>Ужин</p>
         </div>
-        <div>
+        <div className={css.text}>
           <p>Б: 50</p>
           <p>Ж: 40</p>
           <p>У: 150</p>
           <p>К: 1200</p>
+        </div>
+        <div className={css.column2}>
           <p>ХЕ: 6</p>
           <p>ГИ: 5</p>
           <p>ГН: 36</p>
@@ -30,7 +33,7 @@ export default function DiaryPage() {
             Инсулин 2: <span>35ед</span>
           </p>
         </div>
-        <div>
+        <div className={css.text}>
           <p>Мин: 4</p>
           <p>Ср: 5</p>
           <p>Макс: 8</p>
