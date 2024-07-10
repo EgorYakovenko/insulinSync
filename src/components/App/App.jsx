@@ -5,6 +5,7 @@ import Navigation from "../Navigation/Navigation";
 import Header from "../Header/Header";
 import AboutProdukt from "../../page/AboutProdukt/AbouteProdukt";
 import CreateDish from "../../page/CreateDich/CreateDish";
+import ModalAddRation from "../ModalAddRation/ModalAddRation";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/about-produkt" element={<AboutProdukt />} />
         <Route path="/create-dish" element={<CreateDish />} />
       </Routes>
+      <ModalAddRation />
     </>
   );
 }
