@@ -1,4 +1,4 @@
-import css from "./AbouteProdukt.module.css";
+import css from "./AboutProdukt.module.css";
 
 export default function AboutProdukt() {
   return (
