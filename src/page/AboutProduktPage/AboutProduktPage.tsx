@@ -1,4 +1,4 @@
-import AboutProdukt from "../../components/AboutProdukt/AboutProdukt.jsx";
+import AboutProdukt from "../../components/AboutProdukt/AboutProdukt";
 
 export default function AbouteProduktPage() {
   return (

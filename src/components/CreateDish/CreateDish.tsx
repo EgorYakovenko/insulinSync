@@ -1,17 +1,16 @@
-import css from "./AboutProdukt.module.css";
+import css from "./CreateDish.module.css";
 
-export default function AboutProdukt() {
+export default function CreateDish() {
   return (
     <>
-      <h1>Узнать о продукте</h1>
+      <h4>Составить блюдо</h4>
       <div className={css.containerSearch}>
         <button type="button">Добавить</button>
         <input type="search" name="" id="" placeholder="Поиск" />
       </div>
       <div className={css.containerCard}>
         <div className={css.text}>
-          <p>Бургер</p>
-          <p>150гр</p>
+          <p>Борщ</p>
         </div>
         <div className={css.text}>
           <p>Б: 50</p>
@@ -37,10 +36,10 @@ export default function AboutProdukt() {
           <p>Ср: 5</p>
           <p>Макс: 8</p>
         </div>
-        {/* <div className={css.button}>
+        <div className={css.button}>
           <button type="button">Ред</button>
           <button type="button">Удалить</button>
-        </div> */}
+        </div>
       </div>
     </>
   );

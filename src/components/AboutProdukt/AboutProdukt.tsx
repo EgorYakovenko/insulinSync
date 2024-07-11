@@ -1,18 +1,17 @@
-import css from "./Diary.module.css";
+import css from "./AboutProdukt.module.css";
 
-export default function Diary() {
+export default function AboutProdukt() {
   return (
     <>
-      <h1>Дневник</h1>
+      <h4>Узнать о продукте</h4>
       <div className={css.containerSearch}>
         <button type="button">Добавить</button>
         <input type="search" name="" id="" placeholder="Поиск" />
       </div>
       <div className={css.containerCard}>
         <div className={css.text}>
-          <p>Завтрак</p>
-          <p>Обед</p>
-          <p>Ужин</p>
+          <p>Бургер</p>
+          <p>150гр</p>
         </div>
         <div className={css.text}>
           <p>Б: 50</p>
@@ -38,10 +37,10 @@ export default function Diary() {
           <p>Ср: 5</p>
           <p>Макс: 8</p>
         </div>
-        <div className={css.button}>
+        {/* <div className={css.button}>
           <button type="button">Ред</button>
           <button type="button">Удалить</button>
-        </div>
+        </div> */}
       </div>
     </>
   );

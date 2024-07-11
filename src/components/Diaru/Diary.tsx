@@ -1,16 +1,18 @@
-import css from "./CreateDish.module.css";
+import css from "./Diary.module.css";
 
-export default function CreateDish() {
+export default function Diary() {
   return (
     <>
-      <h1>Составить блюдо</h1>
+      <h4>Дневник</h4>
       <div className={css.containerSearch}>
         <button type="button">Добавить</button>
         <input type="search" name="" id="" placeholder="Поиск" />
       </div>
       <div className={css.containerCard}>
         <div className={css.text}>
-          <p>Борщ</p>
+          <p>Завтрак</p>
+          <p>Обед</p>
+          <p>Ужин</p>
         </div>
         <div className={css.text}>
           <p>Б: 50</p>
