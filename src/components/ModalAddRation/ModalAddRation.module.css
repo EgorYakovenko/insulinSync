@@ -29,16 +29,39 @@
 .test2 {
   width: 50px;
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
 }
 
 .countContainer {
   display: flex;
   flex-direction: column;
+  padding-left: 29px;
+  /* justify-content: space-between; */
 }
 
 .test {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+}
+
+.glucose {
+  width: 75px;
+}
+
+.insulin {
+  display: flex;
+}
+
+.countInsulin {
+  display: flex;
+}
+.countFood {
+  display: flex;
+}
+
+.container {
+  display: flex;
+
+  /* justify-content: space-between; */
 }

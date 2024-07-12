@@ -4,10 +4,10 @@ import css from "./ModalAddRation.module.css";
 interface IFormValues {
   daytime: string;
   food: string;
-  glucose: number;
-  insulin1: number;
-  insulin2: number;
-  quantity: number;
+  glucose: string;
+  insulin1: string;
+  insulin2: string;
+  quantity: string;
   unit: string;
 }
 
@@ -15,10 +15,10 @@ export default function ModalAddRation() {
   const initialValues: IFormValues = {
     daytime: "",
     food: "",
-    glucose: 0,
-    insulin1: 0,
-    insulin2: 0,
-    quantity: 0,
+    glucose: "",
+    insulin1: "",
+    insulin2: "",
+    quantity: "",
     unit: "",
   };
   const handleSubmit = (values: IFormValues | number) => {
@@ -28,31 +28,77 @@ export default function ModalAddRation() {
     <>
       <Formik initialValues={initialValues} onSubmit={handleSubmit}>
         <Form>
-          <Field className={css.select} as="select" name="daytime">
-            <option className={css.option} value="breakfast">
-              Завтрак
-            </option>
-            <option className={css.option} value="lunch">
-              Обед
-            </option>
-            <option className={css.option} value="dinner">
-              Ужин
-            </option>
-            <option className={css.option} value="snack">
-              Перекус
-            </option>
-          </Field>
-          <div className={css.dateContainer}>
-            <p>24.06.2024</p>
-            <p>10:15</p>
+          <div className={css.container}>
+            <div>
+              <Field className={css.select} as="select" name="daytime">
+                <option className={css.option} value="breakfast">
+                  Завтрак
+                </option>
+                <option className={css.option} value="lunch">
+                  Обед
+                </option>
+                <option className={css.option} value="dinner">
+                  Ужин
+                </option>
+                <option className={css.option} value="snack">
+                  Перекус
+                </option>
+              </Field>
+              <div className={css.dateContainer}>
+                <p>24.06.2024</p>
+                <p>10:15</p>
+              </div>
+            </div>
+
+            <div className={css.countContainer}>
+              <div>
+                <div className={css.countInsulin}>
+                  <label className={css.countContainer}>
+                    <Field
+                      className={css.glucose}
+                      type="text"
+                      name="glucose"
+                      placeholder="ммоль"
+                    ></Field>
+                  </label>
+                  <div>
+                    <p>5.3</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className={css.insulin}>
+                <label className={css.countContainer}>
+                  <Field
+                    placeholder="Инсулин"
+                    className={css.glucose}
+                    type="text"
+                    name="insulin1"
+                  ></Field>
+                </label>
+                <label className={css.countContainer}>
+                  <Field
+                    placeholder="Инсулин"
+                    className={css.glucose}
+                    type="text"
+                    name="insulin2"
+                  ></Field>
+                </label>
+              </div>
+            </div>
           </div>
+
           <div className={css.test}>
             <label className={css.foodInput}>
               <Field type="text" name="food" placeholder="Еда"></Field>
-              <Field type="text" name="food1" placeholder="Еда"></Field>
             </label>
-            <div>
-              <Field className={css.test2} type="text" name="quantity"></Field>
+            <div className={css.countFood}>
+              <Field
+                className={css.test2}
+                type="text"
+                name="quantity"
+                placeholder="Кол-во"
+              ></Field>
               <Field
                 className={css.test2}
                 type="text"
@@ -62,34 +108,9 @@ export default function ModalAddRation() {
             </div>
             <div>
               <p>5ед</p>
-              <p>5ед</p>
             </div>
           </div>
-
-          <div className={css.countContainer}>
-            <label>
-              Замер глюкозы
-              <Field type="text" name="glucose"></Field>
-            </label>
-            <div>
-              <p>5.3</p>
-            </div>
-            <label>
-              Инсулин 1<Field type="text" name="insulin1"></Field>
-            </label>
-            <label>
-              Инсулин 2<Field type="text" name="insulin2"></Field>
-            </label>
-            {/* <label>
-              Кол-во
-              <Field type="text" name="quantity"></Field>
-            </label>
-            <label>
-              Ед.изм
-              <Field type="text" name="unit"></Field>
-            </label>
-            <div>5ед</div> */}
-          </div>
+          {/* ============================================ */}
         </Form>
       </Formik>
     </>
