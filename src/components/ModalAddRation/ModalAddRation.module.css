@@ -1,0 +1,44 @@
+.select {
+  width: 150px;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #cacaca;
+  appearance: none; /* Убирает стандартную стрелку в некоторых браузерах */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.option {
+  padding: 10px;
+}
+
+.dateContainer {
+  display: flex;
+  gap: 20px;
+}
+
+.foodInput {
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+}
+.test2 {
+  width: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.countContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.test {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
