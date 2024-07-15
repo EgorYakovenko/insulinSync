@@ -19,7 +19,7 @@ function App() {
         <Route path="/about-produkt" element={<AboutProduktPage />} />
         <Route path="/create-dish" element={<CreateDish />} />
       </Routes>
-      <ModalAddRation />
+      {/* <ModalAddRation /> */}
     </>
   );
 }
