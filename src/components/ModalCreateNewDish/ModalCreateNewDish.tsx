@@ -1,55 +1,74 @@
-import { Formik, Form, Field } from "formik";
+import { Formik, Form, Field, FieldArray } from "formik";
 import css from "./ModalCreateNewDish.module.css";
 
-interface IFormCreateNewDich {
+interface IFormCreateNewDish {
   name: string;
   cooking: string;
-  ingredient: string;
-  quantity: string;
+  ingredients: { ingredient: string; quantity: string }[];
 }
 
 export default function ModalCreateNewDish() {
-  const initialValues: IFormCreateNewDich = {
+  const initialValues: IFormCreateNewDish = {
     name: "",
     cooking: "",
-    ingredient: "",
-    quantity: "",
+    ingredients: [{ ingredient: "", quantity: "" }],
   };
 
-  const handleSubmit = (values: IFormCreateNewDich | number) => {
+  const handleSubmit = (values: IFormCreateNewDish) => {
     console.log(values);
   };
+
   return (
     <>
       <Formik initialValues={initialValues} onSubmit={handleSubmit}>
-        <Form className={css.container}>
-          <div>
-            <Field type="text" name="name" placeholder="Название блюда"></Field>
+        {({ values }) => (
+          <Form className={css.container}>
             <Field
+              className={css.title}
+              type="text"
+              name="name"
+              placeholder="Название блюда"
+            ></Field>
+            <Field
+              className={css.title}
               type="text"
               name="cooking"
               placeholder="Процесс приготовления"
             ></Field>
-          </div>
 
-          <div>
-            <Field
-              type="text"
-              name="ingredient"
-              placeholder="Ингредиент"
-            ></Field>
-            <Field
-              type="text"
-              name="quantity"
-              placeholder="Колличество"
-            ></Field>
-          </div>
-
-          <div>
-            <button type="button">Добавить ингредиент</button>
-            <button type="submit">Сохранить</button>
-          </div>
-        </Form>
+            <FieldArray name="ingredients">
+              {({ push }) => (
+                <>
+                  {values.ingredients.map((_, index) => (
+                    <div key={index}>
+                      <Field
+                        className={css.title}
+                        type="text"
+                        name={`ingredients[${index}].ingredient`}
+                        placeholder="Ингредиент"
+                      ></Field>
+                      <Field
+                        className={css.quantity}
+                        type="text"
+                        name={`ingredients[${index}].quantity`}
+                        placeholder="Кол-во"
+                      ></Field>
+                    </div>
+                  ))}
+                  <div className={css.btnContainer}>
+                    <button
+                      type="button"
+                      onClick={() => push({ ingredient: "", quantity: "" })}
+                    >
+                      Добавить ингредиент
+                    </button>
+                    <button type="submit">Сохранить</button>
+                  </div>
+                </>
+              )}
+            </FieldArray>
+          </Form>
+        )}
       </Formik>
     </>
   );

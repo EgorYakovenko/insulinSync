@@ -1,8 +1,14 @@
+import { useRef } from "react";
+import { Link, useLocation } from "react-router-dom";
 import css from "./AboutProdukt.module.css";
 
 export default function AboutProdukt() {
+  const location = useLocation();
+  const goBackLink = useRef(location.state?.from ?? "/");
+
   return (
     <>
+      <Link to={goBackLink.current}>Назад</Link>
       <h4>Узнать о продукте</h4>
       <div className={css.containerSearch}>
         <button type="button">Добавить</button>

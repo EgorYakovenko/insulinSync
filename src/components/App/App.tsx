@@ -7,21 +7,23 @@ import AboutProduktPage from "../../page/AboutProduktPage/AboutProduktPage";
 import CreateDish from "../../page/CreateDichPage/CreateDishPage";
 import ModalAddRation from "../ModalAddRation/ModalAddRation";
 import ModalCreateNewDish from "../ModalCreateNewDish/ModalCreateNewDish";
+import HomePage from "../../page/HomePage/HomePage";
 
 function App() {
   return (
     <>
       <Header />
-      <Navigation />
+      {/* <Navigation /> */}
 
       {/* <DiaryPage /> */}
       <Routes>
+        <Route path="/" element={<HomePage />} />
         <Route path="/diary" element={<DiaryPage />} />
         <Route path="/about-produkt" element={<AboutProduktPage />} />
         <Route path="/create-dish" element={<CreateDish />} />
       </Routes>
       {/* <ModalAddRation /> */}
-      <ModalCreateNewDish />
+      {/* <ModalCreateNewDish /> */}
     </>
   );
 }

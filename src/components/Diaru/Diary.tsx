@@ -1,8 +1,13 @@
+import { useRef } from "react";
+import { Link, useLocation } from "react-router-dom";
 import css from "./Diary.module.css";
 
 export default function Diary() {
+  const location = useLocation();
+  const goBackLink = useRef(location.state?.from ?? "/");
   return (
     <>
+      <Link to={goBackLink.current}>Назад</Link>
       <h4>Дневник</h4>
       <div className={css.containerSearch}>
         <button type="button">Добавить</button>
