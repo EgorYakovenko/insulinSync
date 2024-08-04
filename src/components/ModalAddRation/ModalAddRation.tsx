@@ -1,5 +1,7 @@
 import { Formik, Form, Field } from "formik";
 import css from "./ModalAddRation.module.css";
+import { useRef } from "react";
+import { Link, useLocation, NavLink } from "react-router-dom";
 
 interface IFormValues {
   daytime: string;
@@ -12,6 +14,8 @@ interface IFormValues {
 }
 
 export default function ModalAddRation() {
+  const location = useLocation();
+  const goBackLink = useRef(location.state?.from ?? "/diary");
   const initialValues: IFormValues = {
     daytime: "",
     food: "",
@@ -28,6 +32,7 @@ export default function ModalAddRation() {
     <>
       <Formik initialValues={initialValues} onSubmit={handleSubmit}>
         <Form>
+          <Link to={goBackLink.current}>Назад</Link>
           <div className={css.container}>
             <div>
               <Field className={css.select} as="select" name="daytime">
@@ -99,18 +104,20 @@ export default function ModalAddRation() {
                 name="quantity"
                 placeholder="Кол-во"
               ></Field>
+              {/* Переделать на select */}
               <Field
                 className={css.test2}
                 type="text"
                 name="unit"
                 placeholder="Ед.изм"
               ></Field>
+              {/* ===================== */}
             </div>
             <div>
               <p>5ед</p>
             </div>
           </div>
-          {/* ============================================ */}
+          <button>Сохранить</button>
         </Form>
       </Formik>
     </>

@@ -3,7 +3,6 @@ export default function ButtonInDiary() {
     <>
       <button>+ Приём пищи</button>
       <button>+ Замер глюкозы</button>
-      <button>Сохранить</button>
     </>
   );
 }

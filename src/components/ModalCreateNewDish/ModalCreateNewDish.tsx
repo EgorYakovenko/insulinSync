@@ -1,4 +1,6 @@
+import { useRef } from "react";
 import { Formik, Form, Field, FieldArray } from "formik";
+import { Link, useLocation, NavLink } from "react-router-dom";
 import css from "./ModalCreateNewDish.module.css";
 
 interface IFormCreateNewDish {
@@ -8,6 +10,9 @@ interface IFormCreateNewDish {
 }
 
 export default function ModalCreateNewDish() {
+  const location = useLocation();
+  const goBackLink = useRef(location.state?.from ?? "/create-dish");
+
   const initialValues: IFormCreateNewDish = {
     name: "",
     cooking: "",
@@ -23,6 +28,7 @@ export default function ModalCreateNewDish() {
       <Formik initialValues={initialValues} onSubmit={handleSubmit}>
         {({ values }) => (
           <Form className={css.container}>
+            <Link to={goBackLink.current}>Назад</Link>
             <Field
               className={css.title}
               type="text"

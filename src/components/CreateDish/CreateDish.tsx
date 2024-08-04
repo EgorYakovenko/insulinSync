@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, NavLink } from "react-router-dom";
 
 import css from "./CreateDish.module.css";
 
@@ -11,6 +11,10 @@ export default function CreateDish() {
       <Link to={goBackLink.current}>Назад</Link>
       <h4>Составить блюдо</h4>
       <div className={css.containerSearch}>
+        <NavLink className={css.item} to="/add-new-dich">
+          Добавить
+        </NavLink>
+
         <button type="button">Добавить</button>
         <input type="search" name="" id="" placeholder="Поиск" />
       </div>
