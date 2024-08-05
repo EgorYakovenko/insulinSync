@@ -14,6 +14,9 @@ export default function Navigation() {
       <NavLink className={css.item} to="/create-dish">
         Составить блюдо
       </NavLink>
+      <NavLink className={css.item} to="/glucose-measurement">
+        Замер глюкозы
+      </NavLink>
     </nav>
   );
 }
